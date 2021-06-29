@@ -1,0 +1,122 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<style>
+			body{
+				background-color: skyblue;
+			}
+			button{
+				width: 50px;
+				height: 40px;
+				background-color: rgb(126, 126, 230);
+			}
+			h1{
+				font-style:inherit;
+				text-align: center;
+				margin-top: 10px;
+				color: white;
+			}
+			p1{
+				font-size: 20px;
+				margin-left:36%;
+				margin-top: 10px;
+				text-align: center;
+				color:yellow;
+			}
+			p2{
+				font-size: 20px;
+				margin-left:42%;
+				margin-top: 10px;
+				text-align: center;
+				color:rgb(39, 219, 39);
+			}
+			p3{
+				font-size: 20px;
+				margin-left:38%;
+				margin-top: 10px;
+				text-align: center;
+				color:darkblue;
+			}
+			.inp {
+				margin-left: 17%;
+				width: 60%;
+				padding: 12px 20px;
+				display: inline-block;
+				border: 1px solid black;
+				border-radius: 4px;
+				box-sizing: border-box;
+ 			}
+			.show{
+				color:white;
+				font-size:18px;
+				background-color: blueviolet;
+				margin-left: 22%;
+				width: 50%;
+				padding: 12px 20px;
+				display: inline-block;
+				border: 1px black;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+			.obox{
+				color:white;
+				font-size:18px;
+				background-color: blueviolet;
+				margin-left: 22%;
+				width: 50%;
+				padding: 12px 20px;
+				display: inline-block;
+				border: 1px black;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		
+		
+		<script>
+			$(document).ready(function() 
+			{
+   				var max_fields      = 6;
+     			var wrapper         = $(".cont"); 
+     			var add_button      = $(".butt"); 
+     			var x = 1; //initlal text box count
+	
+   				$(add_button).click(function(e)
+				{
+        			if(x < max_fields){ 
+               		$(wrapper).append('<div><label class="obox">'+document.getElementById("item").value+'</label><button class="rmv" type="submit">X</button></div>'); //add input box
+               		x++; 
+	  				}
+    				});
+   
+    				$(wrapper).on("click",".rmv", function(e){ 
+					$(this).parent('div').remove(); 
+					x--;
+    				})
+			});
+		</script>
+		
+	</head>
+	<body>
+		<h1>WORK TO-DOS</h1>
+		<p1>Enter text into the input field to add items to you list</p1>
+		<br><br>
+		<p2>click the item to mark it as omplete</p2>
+		<br><br>
+		<p3>Click the "X" to remove the item from the list</p3>
+		<br><br>
+		<br>
+		<input type="text" class="inp" placeholder="New item.." id="item">
+		<button class="butt" id="myBtn" type="button">
+			<span class="glyphicon glyphicon-pencil"></span> 
+		</button>
+		<br>
+		<br>
+
+		<div class="cont">
+		
+		</div>
+		
+	</body>
+</html>
